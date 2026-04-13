@@ -1,0 +1,10 @@
+name: weather-ai-mcp
+description: "MEOK AI Labs — Weather intelligence tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/weather-ai-mcp
+license: MIT
+categories: [Weather, Utilities]
+tags: [weather, weather-forecast, meteorology, climate-data, weather-api]
+runtime: python
+entrypoint: server.py

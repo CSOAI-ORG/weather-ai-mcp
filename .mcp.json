@@ -1,0 +1,24 @@
+{
+  "name": "weather-ai-mcp",
+  "description": "MEOK AI Labs \u2014 Weather intelligence tools powered by MEOK AI Labs.",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/weather-ai-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "get_current_conditions",
+    "get_forecast",
+    "get_historical_weather",
+    "get_agricultural_alerts",
+    "get_severe_weather_warnings"
+  ],
+  "categories": [
+    "Weather",
+    "Utilities"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
