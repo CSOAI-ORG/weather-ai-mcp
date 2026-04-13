@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "weather-ai-mcp"
+version = "1.0.0"
+description = "Weather intelligence tools - current conditions, forecasts, historical data, agricultural alerts, severe warnings"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "MEOK AI Labs", email = "hello@meok.ai" },
+]
+keywords = ["mcp", "ai", "tools", "weather"]
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+weather-ai-mcp = "server:mcp.run"
