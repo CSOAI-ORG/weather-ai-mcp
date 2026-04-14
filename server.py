@@ -124,8 +124,7 @@ def _simulate_weather(city_key: str, target_date: date, seed_extra: str = "") ->
 @mcp.tool()
 def get_current_conditions(
     city: str,
-    units: str = "metric",
-) -> dict:
+    units: str = "metric") -> dict:
     """Get current weather conditions for a city.
 
     Args:
@@ -161,8 +160,7 @@ def get_current_conditions(
 def get_forecast(
     city: str,
     days: int = 7,
-    units: str = "metric",
-) -> dict:
+    units: str = "metric") -> dict:
     """Get multi-day weather forecast for a city.
 
     Args:
@@ -234,8 +232,7 @@ def get_historical_weather(
     city: str,
     start_date: str,
     end_date: str,
-    units: str = "metric",
-) -> dict:
+    units: str = "metric") -> dict:
     """Get historical weather data for a city and date range.
 
     Args:
@@ -295,8 +292,7 @@ def get_historical_weather(
 @mcp.tool()
 def get_agricultural_alerts(
     city: str,
-    crop_type: str = "general",
-) -> dict:
+    crop_type: str = "general") -> dict:
     """Get agricultural weather alerts and growing condition analysis.
 
     Args:
@@ -400,8 +396,7 @@ def get_agricultural_alerts(
 
 @mcp.tool()
 def get_severe_weather_warnings(
-    city: str,
-) -> dict:
+    city: str) -> dict:
     """Check for severe weather warnings and safety advisories.
 
     Args:
