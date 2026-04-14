@@ -3,6 +3,11 @@ Weather AI MCP Server
 Weather intelligence tools powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 import math
 import hashlib
@@ -124,13 +129,17 @@ def _simulate_weather(city_key: str, target_date: date, seed_extra: str = "") ->
 @mcp.tool()
 def get_current_conditions(
     city: str,
-    units: str = "metric") -> dict:
+    units: str = "metric", api_key: str = "") -> dict:
     """Get current weather conditions for a city.
 
     Args:
         city: City name (e.g. london, new_york, tokyo)
         units: Unit system: metric (Celsius, km/h) or imperial (Fahrenheit, mph)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("get_current_conditions")
 
     city_key = city.lower().replace(" ", "_")
@@ -160,7 +169,7 @@ def get_current_conditions(
 def get_forecast(
     city: str,
     days: int = 7,
-    units: str = "metric") -> dict:
+    units: str = "metric", api_key: str = "") -> dict:
     """Get multi-day weather forecast for a city.
 
     Args:
@@ -168,6 +177,10 @@ def get_forecast(
         days: Forecast days (1-14)
         units: metric or imperial
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("get_forecast")
 
     days = max(1, min(14, days))
@@ -232,7 +245,7 @@ def get_historical_weather(
     city: str,
     start_date: str,
     end_date: str,
-    units: str = "metric") -> dict:
+    units: str = "metric", api_key: str = "") -> dict:
     """Get historical weather data for a city and date range.
 
     Args:
@@ -241,6 +254,10 @@ def get_historical_weather(
         end_date: End date (YYYY-MM-DD)
         units: metric or imperial
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("get_historical_weather")
 
     city_key = city.lower().replace(" ", "_")
@@ -292,13 +309,17 @@ def get_historical_weather(
 @mcp.tool()
 def get_agricultural_alerts(
     city: str,
-    crop_type: str = "general") -> dict:
+    crop_type: str = "general", api_key: str = "") -> dict:
     """Get agricultural weather alerts and growing condition analysis.
 
     Args:
         city: City/region name
         crop_type: Crop type: general, wheat, rice, corn, vegetables, fruit, grapes
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("get_agricultural_alerts")
 
     city_key = city.lower().replace(" ", "_")
@@ -396,12 +417,16 @@ def get_agricultural_alerts(
 
 @mcp.tool()
 def get_severe_weather_warnings(
-    city: str) -> dict:
+    city: str, api_key: str = "") -> dict:
     """Check for severe weather warnings and safety advisories.
 
     Args:
         city: City name
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("get_severe_weather_warnings")
 
     city_key = city.lower().replace(" ", "_")

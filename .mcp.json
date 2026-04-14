@@ -1,24 +1,105 @@
 {
   "name": "weather-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Weather intelligence tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/weather-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> Weather intelligence tools - current conditions, forecasts, historical data, agricultural alerts, severe warnings",
+  "version": "1.0.0",
   "tools": [
-    "get_current_conditions",
-    "get_forecast",
-    "get_historical_weather",
-    "get_agricultural_alerts",
-    "get_severe_weather_warnings"
-  ],
-  "categories": [
-    "Weather",
-    "Utilities"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "get_current_conditions",
+      "description": "Get current weather conditions for a city.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "units": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ]
+      }
+    },
+    {
+      "name": "get_forecast",
+      "description": "Get multi-day weather forecast for a city.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "units": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ]
+      }
+    },
+    {
+      "name": "get_historical_weather",
+      "description": "Get historical weather data for a city and date range.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "units": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "get_agricultural_alerts",
+      "description": "Get agricultural weather alerts and growing condition analysis.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "crop_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ]
+      }
+    },
+    {
+      "name": "get_severe_weather_warnings",
+      "description": "Check for severe weather warnings and safety advisories.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ]
+      }
+    }
+  ]
 }

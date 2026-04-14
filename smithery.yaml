@@ -1,10 +1,56 @@
 name: weather-ai-mcp
-description: "MEOK AI Labs — Weather intelligence tools powered by MEOK AI Labs."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/weather-ai-mcp
-license: MIT
-categories: [Weather, Utilities]
-tags: [weather, weather-forecast, meteorology, climate-data, weather-api]
-runtime: python
-entrypoint: server.py
+description: '> Weather intelligence tools - current conditions, forecasts, historical
+  data, agricultural alerts, severe warnings'
+version: 1.0.0
+tools:
+- name: get_current_conditions
+  description: Get current weather conditions for a city.
+  parameters:
+  - name: city
+    type: string
+    required: true
+  - name: units
+    type: string
+    required: false
+- name: get_forecast
+  description: Get multi-day weather forecast for a city.
+  parameters:
+  - name: city
+    type: string
+    required: true
+  - name: days
+    type: integer
+    required: false
+  - name: units
+    type: string
+    required: false
+- name: get_historical_weather
+  description: Get historical weather data for a city and date range.
+  parameters:
+  - name: city
+    type: string
+    required: true
+  - name: start_date
+    type: string
+    required: true
+  - name: end_date
+    type: string
+    required: true
+  - name: units
+    type: string
+    required: false
+- name: get_agricultural_alerts
+  description: Get agricultural weather alerts and growing condition analysis.
+  parameters:
+  - name: city
+    type: string
+    required: true
+  - name: crop_type
+    type: string
+    required: false
+- name: get_severe_weather_warnings
+  description: Check for severe weather warnings and safety advisories.
+  parameters:
+  - name: city
+    type: string
+    required: true
