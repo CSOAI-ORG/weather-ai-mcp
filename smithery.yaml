@@ -1,6 +1,5 @@
 name: weather-ai-mcp
-description: '> Weather intelligence tools - current conditions, forecasts, historical
-  data, agricultural alerts, severe warnings'
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: get_current_conditions

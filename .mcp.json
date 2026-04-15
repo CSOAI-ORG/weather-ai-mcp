@@ -1,6 +1,6 @@
 {
   "name": "weather-ai-mcp",
-  "description": "> Weather intelligence tools - current conditions, forecasts, historical data, agricultural alerts, severe warnings",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {
