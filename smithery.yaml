@@ -1,5 +1,6 @@
 name: weather-ai-mcp
-description: MEOK AI Labs MCP Server
+description: 'Weather Ai tools for AI agents. Capabilities: get current conditions,
+  get forecast, get historical weather. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: get_current_conditions

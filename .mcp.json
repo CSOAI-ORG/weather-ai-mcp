@@ -1,6 +1,6 @@
 {
   "name": "weather-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "Weather Ai tools for AI agents. Capabilities: get current conditions, get forecast, get historical weather. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
