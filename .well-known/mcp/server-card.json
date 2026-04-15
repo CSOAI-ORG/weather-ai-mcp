@@ -1,0 +1,57 @@
+{
+  "name": "weather-ai",
+  "description": "Weather Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/weather-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "get_current_conditions",
+      "description": "Get current weather conditions for a city."
+    },
+    {
+      "name": "get_forecast",
+      "description": "Get multi-day weather forecast for a city."
+    },
+    {
+      "name": "get_historical_weather",
+      "description": "Get historical weather data for a city and date range."
+    },
+    {
+      "name": "get_agricultural_alerts",
+      "description": "Get agricultural weather alerts and growing condition analysis."
+    },
+    {
+      "name": "get_severe_weather_warnings",
+      "description": "Check for severe weather warnings and safety advisories."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Energy & Sustainability"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
