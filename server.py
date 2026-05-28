@@ -5,7 +5,6 @@ Weather intelligence tools powered by MEOK AI Labs.
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import time
@@ -15,6 +14,15 @@ import random
 from datetime import date, datetime, timedelta
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 mcp = FastMCP("weather-ai", instructions="MEOK AI Labs MCP Server")
 
@@ -138,7 +146,7 @@ def get_current_conditions(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("get_current_conditions")
 
@@ -179,7 +187,7 @@ def get_forecast(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("get_forecast")
 
@@ -256,7 +264,7 @@ def get_historical_weather(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("get_historical_weather")
 
@@ -318,7 +326,7 @@ def get_agricultural_alerts(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("get_agricultural_alerts")
 
@@ -425,7 +433,7 @@ def get_severe_weather_warnings(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("get_severe_weather_warnings")
 
@@ -515,5 +523,8 @@ def get_severe_weather_warnings(
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
