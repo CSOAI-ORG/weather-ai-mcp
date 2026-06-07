@@ -1,32 +1,36 @@
-# Weather Ai MCP
-
-> weather-ai-mcp MCP — AI-powered automation tool
-
-`weather-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# weather-ai-mcp
+# > Weather intelligence tools - current conditions, forecasts, historical data, agricultural alerts, severe warnings
 
 ## Install
-
 ```bash
 pip install weather-ai-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx weather-ai-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `get_current_conditions` — Get current weather conditions for a city.
-- `get_forecast` — Get multi-day weather forecast for a city.
-- `get_historical_weather` — Get historical weather data for a city and date range.
-- `get_agricultural_alerts` — Get agricultural weather alerts and growing condition analysis.
-- `get_severe_weather_warnings` — Check for severe weather warnings and safety advisories.
+### `get_current_conditions`
+Get current weather conditions for a city.
 
-## Links
+### `get_forecast`
+Get multi-day weather forecast for a city.
 
-- Source: https://github.com/CSOAI-ORG/weather-ai-mcp
-- PyPI: https://pypi.org/project/weather-ai-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `get_historical_weather`
+Get historical weather data for a city and date range.
+
+### `get_agricultural_alerts`
+Get agricultural weather alerts and growing condition analysis.
+
+### `get_severe_weather_warnings`
+Check for severe weather warnings and safety advisories.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

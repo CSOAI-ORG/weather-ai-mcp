@@ -1,0 +1,28 @@
+{
+  "name": "weather-ai-mcp",
+  "title": "Weather Ai Mcp",
+  "description": "Weather Ai tools for AI agents. Capabilities: get current conditions, get forecast, get historical weather. Built by MEOK AI Labs.",
+  "version": "1.0.5",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "get_current_conditions"
+    },
+    {
+      "name": "get_forecast"
+    },
+    {
+      "name": "get_historical_weather"
+    },
+    {
+      "name": "get_agricultural_alerts"
+    },
+    {
+      "name": "get_severe_weather_warnings"
+    }
+  ]
+}

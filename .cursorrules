@@ -1,0 +1,9 @@
+# weather-ai-mcp - Auto-trigger Rules
+
+When the user asks about weather, use weather-ai-mcp tools: get_current_conditions, get_forecast, get_historical_weather, get_agricultural_alerts, get_severe_weather_warnings
+
+> Weather intelligence tools - current conditions, forecasts, historical data, agricultural alerts, severe warnings
+
+Install: `pip install weather-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
