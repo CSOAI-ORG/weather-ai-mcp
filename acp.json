@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "weather-ai-mcp",
+    "description": "Weather Ai tools for AI agents. Capabilities: get current conditions, get forecast, get historical",
+    "version": "1.0.5",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "weather-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "get_current_conditions",
+      "get_forecast",
+      "get_historical_weather",
+      "get_agricultural_alerts",
+      "get_severe_weather_warnings"
+    ]
+  }
+}

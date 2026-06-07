@@ -1,0 +1,68 @@
+{
+  "name": "weather-ai-mcp",
+  "description": "Weather Ai tools for AI agents. Capabilities: get current conditions, get forecast, get historical",
+  "url": "https://proofof.ai/scorecard/weather-ai-mcp.html",
+  "version": "1.0.5",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "get_current_conditions",
+      "name": "Get Current Conditions",
+      "description": "get_current_conditions via weather-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_forecast",
+      "name": "Get Forecast",
+      "description": "get_forecast via weather-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_historical_weather",
+      "name": "Get Historical Weather",
+      "description": "get_historical_weather via weather-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_agricultural_alerts",
+      "name": "Get Agricultural Alerts",
+      "description": "get_agricultural_alerts via weather-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_severe_weather_warnings",
+      "name": "Get Severe Weather Warnings",
+      "description": "get_severe_weather_warnings via weather-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
